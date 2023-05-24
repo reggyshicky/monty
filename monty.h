@@ -11,20 +11,20 @@
 #include <fcntl.h>
 
 /**
- * struct stack_s - doubly linked list representation of a stack(queue)
+ * struct stack_s - doubly linked list representaton of stack(or queue)
  * @n: integer
- * @prev: points to the previous element of the stack (queue)
- * @next: points to the next element of the stack(queue)
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
- * for stack, queues, LIFI, FIFO
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct stack_s
 {
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
-} stack_t
+} stack_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -32,7 +32,7 @@ typedef struct stack_s
  * @f: function to handle the opcode
  *
  * Description: opcode and its function
- * for stack, queues, LIFI, FIFO
+ * for stack, queues, LIFO, FIFO
  */
 typedef struct instruction_s
 {
@@ -41,18 +41,17 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct OpcodeArgument - structure reprsenting the arg for the current opcode
- * @mode: mode of the opcode, indicating stack mode(default) or queue
- * @arg: the argument associated with the opcode as a string
+ * struct OpcodeArgument - arguments of the current opcode
+ * @mode: mode of the opcode, indicating stack mode or queue
+ * @arg: argument associated with the opcode string
  *
- * Description: A global structure used to pass data btn functions conveniently
+ * Description: Global structure used to pass data btn function conveniently
  */
 typedef struct OpcodeArgument
 {
 	int mode;
 	char *arg;
 } OpcodeArgument;
-
 OpcodeArgument globalData;
 
 /* prototypes */
