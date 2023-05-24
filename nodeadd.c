@@ -5,7 +5,7 @@
  * @w: the value/data to push on the stack
  * Return: the new node(success), NULL if it fails
  */
-stack_t *nodeadd(stack_t **my_stack, const in w)
+stack_t *nodeadd(stack_t **my_stack, const in n)
 {
 	stack_t *newnode;
 
@@ -17,13 +17,13 @@ stack_t *nodeadd(stack_t **my_stack, const in w)
 		free(newnode);
 		return (NULL);
 	}
-	newnode->w = w;
-	newnode->next = *stack;
+	newnode->n = n;
+	newnode->next = *my_stack;
 	new->prev = NULL;
 
-	if (*stack != NULL)
-		(*stack)->prev = newnode;
-	*stack = newnode;
+	if (*my_stack != NULL)
+		(*my_stack)->prev = newnode;
+	*my_stack = newnode;
 
 	return (newnode);
 }
