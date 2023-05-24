@@ -11,6 +11,27 @@
 #include <fcntl.h>
 #include <ctype.h>
 
+#define INSTRUCTIONS \
+{ \
+	{"push", push_op}, \
+	{"pall", pall_op}, \
+	{"pint", pint_op}, \
+	{"pop", pop_op}, \
+	{"rotr", rotr_op}, \
+	{"swap", swap_op}, \
+	{"rotl", rotl_op}, \
+	{"nop", nop_op}, \
+	{"pstr", pstr_p}, \
+	{"div", div_op}, \
+	{"pchar", pchar_op}, \
+	{"mul", mul_op}, \
+	{"mod", mod_op}, \
+	{"add", add_op}, \
+	{"sub", sub_op}, \
+	{NULL, NULL} \
+}
+
+
 /**
  * struct stack_s - doubly linked list representaton of stack(or queue)
  * @n: integer
