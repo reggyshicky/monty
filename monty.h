@@ -9,6 +9,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <fcntl.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representaton of stack(or queue)
@@ -72,7 +73,7 @@ void pchar_op(stack_t **mystack, unsigned int line_no);
 void rotl_op(stack_t **my_stack, unsigned int line_no);
 stack_t *nodeadd(stack_t **my_stack, const int n);
 stack_t *enqueue_(stack_t **my_stack, const int n);
-void opcode_(stack_t **my_stack, char *str, unsigned int line no);
+void opcode_(stack_t **my_stack, char *str, unsigned int line_no);
 int is_digit(char *str);
 int check_number(char *str_);
 void stackfreeing(stack_t *my_stack);

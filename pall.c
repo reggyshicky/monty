@@ -7,7 +7,7 @@
  */
 void pall_op(stack_t **my_stack, unsigned int line_no __attribute__((unused)))
 {
-	stack_display(**my_stack)
+	stack_display(*my_stack);
 }
 
 /**
@@ -25,5 +25,5 @@ size_t stack_display(const stack_t *my_stack)
 		my_stack = my_stack->next;
 		stack_size++;
 	}
-	return (stack_size)
+	return (stack_size);
 }

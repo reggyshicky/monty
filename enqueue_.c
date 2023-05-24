@@ -5,9 +5,9 @@
  * @n: the value/data to add on the newnode/stack
  * Return: newnode if success, NULL if failure
  */
-stack_t enqueue_(stack_t **my_stack, const int n)
+stack_t *enqueue_(stack_t **my_stack, const int n)
 {
-	stack_t *presentnode = *stack; /*presentnode is used to traverse*/
+	stack_t *presentnode = *my_stack; /*presentnode is used to traverse*/
 	stack_t *newnode;
 
 	newnode = malloc(sizeof(stack_t));
@@ -34,7 +34,7 @@ stack_t enqueue_(stack_t **my_stack, const int n)
 			presentnode->next = newnode;
 			break;
 		}
-		presentnode = presentnode->next
+		presentnode = presentnode->next;
 	}
 	return (newnode);
 }

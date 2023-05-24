@@ -2,10 +2,10 @@
 /**
  * nodeadd - adds a node on a stack
  * @my_stack: double pointer to the stack to add the node onto
- * @w: the value/data to push on the stack
+ * @n: the value/data to push on the stack
  * Return: the new node(success), NULL if it fails
  */
-stack_t *nodeadd(stack_t **my_stack, const in n)
+stack_t *nodeadd(stack_t **my_stack, const int n)
 {
 	stack_t *newnode;
 
@@ -19,7 +19,7 @@ stack_t *nodeadd(stack_t **my_stack, const in n)
 	}
 	newnode->n = n;
 	newnode->next = *my_stack;
-	new->prev = NULL;
+	newnode->prev = NULL;
 
 	if (*my_stack != NULL)
 		(*my_stack)->prev = newnode;
