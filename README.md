@@ -1,6 +1,5 @@
 # 0x019 - Stacks, Queues - LIFO, FIFO
 # The Monty Language
--
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes(just like python). It relies on unique stack, with specific instructions to manipulate it.The goal of this project is to create an interpreter for Monty Bytecodes files.
 0. Implement the puish and pall opcodes
 1. Implement the pint opcode
