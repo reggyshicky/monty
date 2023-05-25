@@ -9,7 +9,7 @@ void stackfreeing(stack_t *my_stack)
 	stack_t *presentnode = my_stack;
 	stack_t *nextnode;
 
-	if (my_stack != NULL)
+	if (my_stack)
 	{
 		nextnode = my_stack->next;
 		while (presentnode)

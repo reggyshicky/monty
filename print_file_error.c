@@ -7,6 +7,6 @@
  */
 void print_file_error(char *argv)
 {
-	fprintf(stderr, "Error: can't open file %s\n", argv);
+	fprintf(stderr, "Error: Can't open file %s\n", argv);
 	exit(EXIT_FAILURE);
 }

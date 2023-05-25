@@ -7,18 +7,17 @@
  */
 stack_t *enqueue_(stack_t **my_stack, const int n)
 {
-	stack_t *presentnode = *my_stack; /*presentnode is used to traverse*/
-	stack_t *newnode;
+	stack_t *newnode = malloc(sizeof(stack_t));
+	stack_t *presentnode = *my_stack;
 
-	newnode = malloc(sizeof(stack_t));
-	if (newnode == NULL)
+	if (!newnode)
 	{
 		free(newnode);
 		return (NULL);
 	}
 	newnode->n = n;
 
-	if (*my_stack == NULL)
+	if (!*my_stack)
 	{
 		newnode->next = NULL;
 		newnode->prev = NULL;
@@ -27,7 +26,7 @@ stack_t *enqueue_(stack_t **my_stack, const int n)
 	}
 	while (presentnode)
 	{
-		if (presentnode->next == NULL)
+		if (!presentnode->next)
 		{
 			newnode->next = NULL;
 			newnode->prev = presentnode;

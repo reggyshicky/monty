@@ -9,7 +9,7 @@ void div_op(stack_t **my_stack, unsigned int line_no)
 {
 	int quotient_rslt;
 
-	if (my_stack == NULL || *my_stack == NULL || (*my_stack)->next == NULL)
+	if (!my_stack || !*my_stack || !((*my_stack)->next))
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_no);
 		exit(EXIT_FAILURE);
@@ -18,7 +18,7 @@ void div_op(stack_t **my_stack, unsigned int line_no)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_no);
 		exit(EXIT_FAILURE);
-
+		;
 		return;
 	}
 	quotient_rslt = ((*my_stack)->next->n) / ((*my_stack)->n);

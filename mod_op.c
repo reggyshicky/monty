@@ -9,7 +9,7 @@ void mod_op(stack_t **my_stack, unsigned int line_no)
 {
 	int mod_result;
 
-	if (my_stack == NULL || *my_stack == NULL || (*my_stack)->next == NULL)
+	if (!my_stack || !*my_stack || !((*my_stack)->next))
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_no);
 		exit(EXIT_FAILURE);

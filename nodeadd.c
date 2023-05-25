@@ -7,21 +7,19 @@
  */
 stack_t *nodeadd(stack_t **my_stack, const int n)
 {
-	stack_t *newnode;
+	stack_t *newnode = malloc(sizeof(stack_t));
 
-	newnode = malloc(sizeof(stack_t));
-
-	if (newnode == NULL)
+	if (!newnode)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		free(newnode);
 		return (NULL);
 	}
 	newnode->n = n;
+
 	newnode->next = *my_stack;
 	newnode->prev = NULL;
-
-	if (*my_stack != NULL)
+	if (*my_stack)
 		(*my_stack)->prev = newnode;
 	*my_stack = newnode;
 

@@ -5,12 +5,13 @@
  * @line_no: line no associated with the opcode
  * Return: void
  */
-void rotl_op(stack_t **my_stack, unsigned int line_no __attribute__((unused)))
+void rotl_op(stack_t **my_stack, unsigned int line_no)
 {
 	stack_t *top;
 	stack_t *bottom;
 
-	if (my_stack == NULL || *my_stack == NULL || (*my_stack)->next == NULL)
+	(void) line_no;
+	if (!my_stack || !*my_stack || !(*my_stack)->next)
 		return;
 	bottom = top = *my_stack;
 
