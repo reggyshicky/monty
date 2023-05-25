@@ -12,7 +12,7 @@ int check_number(char *str_)
 		return (0);
 	for (w = 0; str_[w]; w++)
 	{
-		if (w < '0' || w > '9')
+		if (str_[w] < '0' || str_[w] > '9')
 			return (0);
 	}
 	return (1);

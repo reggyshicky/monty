@@ -99,5 +99,6 @@ int is_digit(char *str);
 int check_number(char *str_);
 void stackfreeing(stack_t *my_stack);
 size_t stack_display(const stack_t *my_stack);
-
+void print_file_error(char *argv);
+void print_error_usage(void);
 #endif /*MONTY_H */
