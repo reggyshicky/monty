@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int condition = 0;
+
 
 /**
  * main - code to test the monty program
@@ -11,8 +11,9 @@ int condition = 0;
  * @argc: size of arguments(counter)
  * Return: nothin
  */
-int main(int argv, char **argv)
+int main(int argc, char **argv)
 {
+	int status = 0;
 	char *string = NULL;
 	stack_t *my_stack = NULL;
 	size_t bufferlen = 0;
@@ -22,4 +23,29 @@ int main(int argv, char **argv)
 
 	globalData.mode = 1; /*stack*/
 	if (argc != 2)
+		print_error_usage();
+
+	user_file = fopen(argv[1], "r");
+
+	if (!user_file)
+		print_file_error(argv[1]);
+
+	while ((getline(&bufferr, &bufferlen, user_file)) != (-1))
+	{
+		if (status)
+			break;
+		if (*bufferr == '\n')
+		{
+			line_no++;
+			continue;
+		}
+		string = strtok(NULL, " \t\n");
+		opcode_(&my_stack, string, line_no);
+		line_no++;
+	}
+	free(bufferr);
+	stackfreeing(my_stack);
+	fclose(user_file);
+	exit(EXIT_SUCCESS);
+}
 
