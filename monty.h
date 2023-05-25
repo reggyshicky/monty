@@ -21,7 +21,7 @@
 	{"swap", swap_op}, \
 	{"rotl", rotl_op}, \
 	{"nop", nop_op}, \
-	{"pstr", pstr_p}, \
+	{"pstr", pstr_op}, \
 	{"div", div_op}, \
 	{"pchar", pchar_op}, \
 	{"mul", mul_op}, \
