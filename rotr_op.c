@@ -10,6 +10,7 @@ void rotr_op(stack_t **my_stack, unsigned int line_no __attribute__((unused)))
 
 	stack_t *bottom;
 	stack_t *previous;
+
 	if (my_stack == NULL || *my_stack == NULL || (*my_stack)->next == NULL)
 		return;
 	bottom = *my_stack;
