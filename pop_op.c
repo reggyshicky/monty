@@ -9,7 +9,7 @@ void pop_op(stack_t **my_stack, unsigned int line_no)
 {
 	stack_t *temp_node = NULL; /*Node to traverser*/
 
-	if (my_stack == NULL || *my_stack == NULL)
+	if (!my_stack || !*my_stack)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_no);
 		exit(EXIT_FAILURE);
@@ -18,7 +18,7 @@ void pop_op(stack_t **my_stack, unsigned int line_no)
 	free(*my_stack);
 	*my_stack = temp_node;
 
-	if (*my_stack == NULL)
+	if (!*my_stack)
 		return;
 	(*my_stack)->prev = NULL;
 }

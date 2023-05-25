@@ -1,4 +1,7 @@
-#include "monty.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "./monty.h"
 /**
  * opcode_ - sets the LIFO AND FIFO FORMAT
  * @my_stack: stack to set format

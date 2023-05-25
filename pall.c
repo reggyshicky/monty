@@ -19,7 +19,7 @@ size_t stack_display(const stack_t *my_stack)
 {
 	size_t stack_size = 0;
 
-	while (my_stack != NULL)
+	while (my_stack)
 	{
 		printf("%d\n", my_stack->n);
 		my_stack = my_stack->next;
