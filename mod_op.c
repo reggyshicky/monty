@@ -15,6 +15,13 @@ void mod_op(stack_t **my_stack, unsigned int line_no)
 		exit(EXIT_FAILURE);
 		return;
 	}
+	if (((*my_stack)->n) == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_no);
+		exit(EXIT_FAILURE);
+		return;
+	}
+
 	mod_result = ((*my_stack)->next->n) % ((*my_stack)->n);
 	pop_op(my_stack, line_no);
 	(*my_stack)->n = mod_result;
