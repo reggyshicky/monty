@@ -9,7 +9,7 @@ void add_op(stack_t **my_stack, unsigned int line_no)
 {
 	int total_sum;
 
-	if (!my_stack|| !*my_stack || !((*my_stack)->next))
+	if (!my_stack || !*my_stack || !((*my_stack)->next))
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_no);
 		exit(EXIT_FAILURE);
